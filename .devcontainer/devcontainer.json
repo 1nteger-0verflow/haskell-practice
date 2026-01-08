@@ -12,11 +12,11 @@
             "installOhMyZshConfig": "true"
         },
         "ghcr.io/rocker-org/devcontainer-features/apt-packages:1": {
-            "packages": "curl,wget,git,ca-certificates,build-essential"
+            "packages": "curl,wget,git,ca-certificates,build-essential,libtinfo-dev"
         },
-        "ghcr.io/devcontainers-extra/features/haskell:2": {},
-        "ghcr.io/devcontainers/features/node:1": {},
-        "ghcr.io/anthropics/devcontainer-features/claude-code:1.0": {}
+        "ghcr.io/devcontainers-extra/features/haskell:2": { },
+        "ghcr.io/devcontainers/features/node:1": { },
+        "ghcr.io/anthropics/devcontainer-features/claude-code:1.0": { }
     },
     "runArgs": [ "--init", "--rm" ],
     "hostRequirements": {
@@ -25,6 +25,7 @@
     "containerUser": "vscode",
     "remoteUser": "vscode",
     "updateRemoteUserUID": true,
+    "postStartCommand": "cabal update && cabal install ghci-dap haskell-debug-adapter",
     "customizations": {
         "vscode": {
             "settings": {
