@@ -25,7 +25,7 @@
     "containerUser": "vscode",
     "remoteUser": "vscode",
     "updateRemoteUserUID": true,
-    "postStartCommand": "cabal update && cabal install ghci-dap haskell-debug-adapter",
+    "postCreateCommand": "cabal update && cabal install ghci-dap haskell-debug-adapter",
     "customizations": {
         "vscode": {
             "settings": {
